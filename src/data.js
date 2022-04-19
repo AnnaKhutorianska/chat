@@ -18,7 +18,7 @@ export default [
             },
             {
                 id: 'GqH4PzN2ND_orKCdWqTBS',
-                message: '"Go camping?" I live in a tent permanently!',
+                message: 'Go camping? I live in a tent permanently!',
                 createdAt: '2012-02-17T08:16:33',
                 isCurrentUser: false
             }
@@ -59,7 +59,14 @@ export default [
         id: 'JwsIN5c94UQLR1uJJA7sW',
         username: 'Velazquez',
         imgSrc: 'https://www.onlyinfluencers.com/images/easyblog_articles/763/b2ap3_large_phelan_small.png',
-        messages: []
+        messages: [
+            {
+                id: 'GbFVmfD_EKGPPrirpTyRu',
+                message: 'What is the best social psychology trick you know?',
+                createdAt: '2021-03-01T10:05:34',
+                isCurrentUser: true
+            },
+        ]
     },
     {
         id: 'a5JOuPGmyCOWA8L0hPsOb',
@@ -93,7 +100,7 @@ export default [
             },
             {
                 id: '9YTgi6-IULv-MO97n3xjL',
-                message: 'Go on',
+                message: 'Do you like to sing out loud when no one else is around?',
                 createdAt: '2016-08-08T19:22:11',
                 isCurrentUser: true
             }

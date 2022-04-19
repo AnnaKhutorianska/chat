@@ -1,0 +1,43 @@
+@use '../../assets/mixins.scss';
+
+.chat {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+    @include mixins.borderButtom;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(239, 239, 239);
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+
+        &-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-name {
+            font-size: 14px;
+        }
+
+        &-message {
+            font-size: 12px;
+            color: rgb(148, 148, 148);
+            line-height: 16px;
+            max-height: 32px;
+            overflow: hidden;
+        }
+    }
+
+    &__date {
+        white-space: nowrap;
+        font-size: 10px;
+        line-height: 14px;
+        color: grey;
+    }
+}

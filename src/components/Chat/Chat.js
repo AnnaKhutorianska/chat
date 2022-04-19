@@ -1,21 +1,48 @@
-import React from 'react'
-import UserImage from '../UserImage/UserImage'
+import React from 'react';
+import UserImage from '../UserImage/UserImage';
 
-function Chat({chat}) {
-  const {username, imgSrc, messages} = chat;
-  console.log('not', messages);
-  const sortedMessages = messages.sort((dateA, dateB) => {
-    return new Date(dateB.createdAt) - new Date(dateA.createdAt)
-  });
-  console.log('sorted', sortedMessages);
-  return (
-    <div>
-        <UserImage imgSrc={imgSrc} isOnline={true}/>
-        <p>{username}</p>
-        <p>message</p>
-        <p>data</p>
-    </div>
-  )
+import './Chat.scss';
+
+const monthLabels = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+function Chat({ chat }) {
+	const { username, imgSrc, messages } = chat;
+	const { createdAt, message } = messages[0];
+
+	function getFormatedDate() {
+		const date = new Date(createdAt);
+		const month = monthLabels[date.getMonth()];
+		const day = date.getDate();
+		const fullYear = date.getFullYear();
+
+		return `${month} ${day}, ${fullYear}`;
+	}
+
+	return (
+		<div className="chat">
+			<div className="chat__info">
+				<UserImage imgSrc={imgSrc} isOnline={true} />
+				<div className="chat__info-details">
+					<p className='chat__info-name'>{username}</p>
+					<p className='chat__info-message'>{message}</p>
+				</div>
+			</div>
+			<p className='chat__date'>{getFormatedDate()}</p>
+		</div>
+	);
 }
 
 export default Chat;

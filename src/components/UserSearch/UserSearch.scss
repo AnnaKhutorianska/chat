@@ -1,7 +1,10 @@
+@use '../../assets/mixins.scss';
+@import '../../assets/variables.scss';
+
 .user-search {
     background-color: rgb(244, 244, 244);
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid rgb(173, 173, 173);
+    @include mixins.borderButtom;
     padding: 0 15px;
 }
