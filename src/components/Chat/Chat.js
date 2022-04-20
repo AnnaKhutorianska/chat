@@ -18,9 +18,10 @@ const monthLabels = [
   'Dec',
 ];
 
-function Chat({ chat }) {
+function Chat({ chat, changeChat }) {
 	const { username, imgSrc, messages } = chat;
-	const { createdAt, message } = messages[0];
+	const { createdAt, message } = messages[messages.length-1];
+
 
 	function getFormatedDate() {
 		const date = new Date(createdAt);
@@ -32,7 +33,7 @@ function Chat({ chat }) {
 	}
 
 	return (
-		<div className="chat">
+		<div className="chat" onClick={changeChat}>
 			<div className="chat__info">
 				<UserImage imgSrc={imgSrc} isOnline={true} />
 				<div className="chat__info-details">

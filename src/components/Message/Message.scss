@@ -1,0 +1,33 @@
+@use '../../assets/mixins.scss';
+
+.message {
+    display: flex;
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &__info {
+        display: flex;
+        max-width: 80%;
+
+        &-text {
+            @include mixins.textMsg(rgb(224,224,224), rgb(65, 65, 65));
+
+            &--current {
+                @include mixins.textMsg(rgb(60,66,82), rgb(255, 255, 255));
+            }
+        }
+
+        &-date {
+            font-size: 12px;
+            color: rgb(167, 167, 167);
+            text-align: right;
+
+            &--current {
+                text-align: left;
+            }
+        }
+    }
+
+}

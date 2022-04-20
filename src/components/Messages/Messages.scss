@@ -1,3 +1,28 @@
-.messages {
+@use '../../assets/mixins.scss';
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    @include mixins.borderLeft;
+
+    &__select {
+        margin: auto;
+        font-size: 20px;
+        color: rgb(82, 82, 82);
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include mixins.borderBottom;
+        padding: 10px 15px;
+        background-color: rgb(228, 228, 228);
+    }
+
+    &__all {
+        display: flex;
+        flex-direction: column;
+    }
 }

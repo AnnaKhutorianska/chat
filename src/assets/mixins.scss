@@ -1,3 +1,14 @@
-@mixin borderButtom {
+@mixin borderBottom {
     border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+@mixin borderLeft {
+    border-left: 1px solid rgb(173, 173, 173);
+}
+
+@mixin textMsg($bgn, $color) {
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: $bgn;
+    color: $color
 }
