@@ -2,7 +2,7 @@
 @import '../../assets/variables.scss';
 
 .user-search {
-    background-color: rgb(244, 244, 244);
+    background-color: $mainBgn;
     display: flex;
     flex-direction: column;
     @include mixins.borderBottom;

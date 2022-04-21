@@ -1,4 +1,3 @@
-import React from 'react';
 import UserImage from '../UserImage/UserImage';
 
 import './Chat.scss';

@@ -1,21 +1,8 @@
 import { useContext, createContext, useState } from 'react';
 import { nanoid } from 'nanoid';
 import chatsData from '../data';
-
+import { sortChats } from '../utils/helpers';
 const ChatContext = createContext();
-
-function sortChats(data) {
-	return data.map(chat => {
-		return {
-			...chat,
-			messages: chat.messages.sort((a, b) => {
-				return new Date(a.createdAt) - new Date(b.createdAt);
-			})
-		};
-	}).sort((a, b) => {
-		return new Date(b.messages[b.messages.length-1].createdAt) - new Date(a.messages[a.messages.length-1].createdAt);
-	});
-}
 
 function prepareState() {
 	const chats = localStorage.getItem('chats');
@@ -31,9 +18,19 @@ const useChatContext = () => useContext(ChatContext);
 
 function ChatContextProvider({ children }) {
 	const [chats, setChats] = useState(prepareState());
-	const [currentChat, setCurrentChat] = useState({});
+	const [currentId, setCurrentId] = useState(null);
+	const [notification, setNotification] = useState({});
 
-	function changeMessages(id, message, isCurrentUser = true) {
+	function showNotification(message) {
+		setNotification({
+			isShow: true,
+			message
+		});
+
+		setTimeout(() => setNotification({}), 5000);
+	}
+
+	function addMessage(id, message, isCurrentUser = false) {
 		setChats(prevChats => {
 			const updatedChats = prevChats.map(chat => {
 				if (chat.id !== id) return chat;
@@ -54,15 +51,17 @@ function ChatContextProvider({ children }) {
 
 			localStorage.setItem('chats', JSON.stringify(updatedChats));
 
+			if(isCurrentUser) showNotification(message);
+
 			return updatedChats;
 		});
 	}
 
 	function handleChangeChat(id) {
-		setCurrentChat(chats.find(chat => chat.id === id));
+		setCurrentId(id);
 	}
 
-	return <ChatContext.Provider value={{ chats, changeMessages, currentChat, handleChangeChat }}>{children}</ChatContext.Provider>;
+	return <ChatContext.Provider value={{ chats, addMessage, currentId, handleChangeChat, notification }}>{children}</ChatContext.Provider>;
 }
 
 export { ChatContextProvider, useChatContext };

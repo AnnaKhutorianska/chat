@@ -1,7 +1,9 @@
 @use '../../assets/mixins.scss';
+@import '../../assets/variables.scss';
 
 .message {
     display: flex;
+    margin-bottom: 20px;
 
     &--right {
         justify-content: flex-end;
@@ -12,20 +14,25 @@
         max-width: 80%;
 
         &-text {
-            @include mixins.textMsg(rgb(224,224,224), rgb(65, 65, 65));
+            width: fit-content;
+            padding: 10px;
+            margin-bottom: 5px;
+            @include mixins.textMsg($myMsg, rgb(65, 65, 65));
 
             &--current {
-                @include mixins.textMsg(rgb(60,66,82), rgb(255, 255, 255));
+                @include mixins.textMsg($currentMsg, rgb(255, 255, 255));
+                margin-left: 5px;
             }
         }
 
         &-date {
-            font-size: 12px;
+            font-size: 10px;
             color: rgb(167, 167, 167);
             text-align: right;
 
             &--current {
                 text-align: left;
+                margin-left: 5px;
             }
         }
     }

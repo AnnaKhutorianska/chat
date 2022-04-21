@@ -1,14 +1,14 @@
-import React from 'react';
 import { useChatContext } from '../../contexts/chatContext';
+import InputMessage from '../InputMessage/InputMessage';
 import Message from '../Message/Message';
 import UserImage from '../UserImage/UserImage';
 
 import './Messages.scss';
 
 function Messages() {
-    const { currentChat } = useChatContext();
-    const { username, imgSrc, messages } = currentChat;
-    console.log(messages);
+    const { chats, currentId } = useChatContext();
+    const currentChat = chats.find(chat => chat.id === currentId);
+    const { id, username, imgSrc, messages } = currentChat || {};
 
     return (
         <div className='chat-messages'>
@@ -30,6 +30,7 @@ function Messages() {
                             />
                         ))}
                     </div>
+                    <InputMessage id={id}/>
                 </>
             }
         </div>

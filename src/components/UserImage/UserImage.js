@@ -1,4 +1,3 @@
-import React from 'react';
 import userImg from '../../assets/images/defaultImg.png';
 import onlineMark from '../../assets/images/onlineMark.png'
 
