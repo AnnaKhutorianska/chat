@@ -41,3 +41,51 @@
         color: rgb(97, 97, 97);
     }
 }
+
+@media (max-width: 768px) {
+    .chat {
+        padding: 15px 10px;
+
+        &__info {
+            gap: 5px;
+
+            &-name {
+                font-size: 13px;
+            }
+
+            &-message {
+                font-size: 11px;
+                line-height: 12px;
+                max-height: 24px;
+            }
+        }
+
+        &__date {
+            font-size: 8px;
+            line-height: 12px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .chat {
+        flex-direction: column;
+        padding: 5px 10px;
+
+        &__info {
+            flex-direction: column;
+
+            &-name {
+                font-size: 10px;
+            }
+
+            &-message {
+                display: none;
+            }
+        }
+
+        &__date {
+            display: none;
+        }
+    }
+}

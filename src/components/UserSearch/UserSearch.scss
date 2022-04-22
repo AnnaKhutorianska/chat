@@ -8,3 +8,9 @@
     @include mixins.borderBottom;
     padding: 10px 15px;
 }
+
+@media (max-width: 768px) {
+    .user-search {
+        padding: 10px;
+    }
+}

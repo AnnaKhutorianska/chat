@@ -17,4 +17,18 @@
     }
 }
 
+@media (max-width: 768px) {
+    .image {
+        &__user {
+            width: 30px;
+            height: 30px;
+        }
 
+        &__online {
+            bottom: 4px;
+            left: 20px;
+            width: 10px;
+            height: 10px;
+        }
+    }
+}

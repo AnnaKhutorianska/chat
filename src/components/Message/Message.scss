@@ -38,3 +38,38 @@
     }
 
 }
+
+@media (max-width: 768px) {
+    .message {
+        margin-bottom: 15px;
+
+        &__info {
+            &-text {
+                font-size: 12px;
+            }
+
+            &-date {
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .message {
+        margin-bottom: 10px;
+
+        &__info {
+            max-width: 90%;
+
+            &-text {
+                padding: 8px;
+                font-size: 10px;
+            }
+
+            &-date {
+                font-size: 7px;
+            }
+        }
+    }
+}

@@ -43,3 +43,38 @@
 		}
 	}
 }
+
+@media (max-width: 768px) {
+	.form {
+		padding: 15px;
+
+		&__btn {
+			top: 11px;
+
+			&-img {
+				height: 17px;
+				width: 17px;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.form {
+		padding: 10px;
+
+		&__input {
+			padding: 8px 43px 8px 18px;
+			font-size: 12px;
+		}
+
+		&__btn {
+			top: 9px;
+
+			&-img {
+				height: 15px;
+				width: 15px;
+			}
+		}
+	}
+}

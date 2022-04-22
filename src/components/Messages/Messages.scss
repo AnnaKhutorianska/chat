@@ -36,3 +36,33 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .chat-messages {
+        &__select {
+            font-size: 17px;
+        }
+
+        &__user {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        &__all {
+            padding: 10px 10px 60px 10px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .chat-messages {
+        &__select {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        &__all {
+            padding: 10px 10px 40px 10px;
+        }
+    }
+}
